@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Audio Splitter CLI — run from anywhere
+SCRIPT="$(readlink -f "$0" 2>/dev/null || python3 -c "import os,sys; print(os.path.realpath(sys.argv[1]))" "$0")"
+DIR="$(dirname "$SCRIPT")"
+exec "$DIR/venv/bin/python" "$DIR/split.py" "$@"
